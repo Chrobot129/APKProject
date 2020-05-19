@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview) TO DO
+//        val adapter = HistoryListAdapter(this)
+//        recyclerView.adapter = adapter
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "History"
+        ).build()
 
         calTextView = findViewById(R.id.cal_textView)
         massEditText = findViewById(R.id.mass_editText)
