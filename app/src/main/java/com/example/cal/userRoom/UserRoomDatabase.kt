@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(User::class), version = 2, exportSchema = false)
 public abstract class UserRoomDatabase: RoomDatabase() {
 
     abstract fun usersDao(): UsersDao
@@ -27,7 +27,7 @@ public abstract class UserRoomDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     UserRoomDatabase::class.java,
-                    "user_database"
+                    "users_table"
                 )
                     .addCallback(UserDatabaseCallback(scope))
                     .build()
@@ -61,12 +61,12 @@ public abstract class UserRoomDatabase: RoomDatabase() {
         fun populateDatabase(usersDao: UsersDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
-            usersDao.deleteAll()
+            //usersDao.deleteAll()
 
-            var user = User("Hello")
-            usersDao.insert(user)
-            user = User("Krystian")
-            usersDao.insert(user)
+           // var user = User("Hello", "World!!")
+           // usersDao.insert(user)
+           // user = User("Krystian", "Chrobocińsi")
+           // usersDao.insert(user)
         }
      }
 }

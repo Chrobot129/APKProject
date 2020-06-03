@@ -54,8 +54,7 @@ class StartActivity : AppCompatActivity() {
 
         if(requestCode == newUserActivityRequestCode && requestCode == -Activity.RESULT_OK) {
             intentData?.let { data ->
-                val user = User(data.getStringExtra(NewUserActivity.EXTRA_REPLY))
-                //, data.getStringExtra("GENDER")
+                val user = User(data.getStringExtra(NewUserActivity.EXTRA_REPLY), data.getStringExtra("GENDER"))
                 userViewModel.insert(user)
                 Unit
             }
