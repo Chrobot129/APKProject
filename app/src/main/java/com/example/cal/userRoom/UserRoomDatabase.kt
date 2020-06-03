@@ -65,7 +65,7 @@ public abstract class UserRoomDatabase: RoomDatabase() {
 
             var user = User("Hello")
             usersDao.insert(user)
-            user = User("World!")
+            user = User("Krystian")
             usersDao.insert(user)
         }
      }

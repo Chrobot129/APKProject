@@ -51,15 +51,11 @@ class StartActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
-        Toast.makeText(
-            applicationContext,
-            Activity.RESULT_OK.toString(),
-            Toast.LENGTH_LONG
-        ).show()
 
         if(requestCode == newUserActivityRequestCode && requestCode == -Activity.RESULT_OK) {
             intentData?.let { data ->
                 val user = User(data.getStringExtra(NewUserActivity.EXTRA_REPLY))
+                //, data.getStringExtra("GENDER")
                 userViewModel.insert(user)
                 Unit
             }

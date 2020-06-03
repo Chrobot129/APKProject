@@ -12,12 +12,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textAutoComplete"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.342" />
 
     <Button
         android:id="@+id/addUser_button"
@@ -26,10 +25,10 @@
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.689" />
 
     <Button
         android:id="@+id/button2"
@@ -38,6 +37,31 @@
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <RadioGroup
+        android:id="@+id/usergender_radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/userMan_radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mężczyzna" />
+
+        <RadioButton
+            android:id="@+id/userWoman_radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kobieta" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
