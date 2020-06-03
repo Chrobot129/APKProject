@@ -1,5 +1,6 @@
 package com.example.cal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -7,6 +8,7 @@ import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_start.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -73,5 +75,6 @@ class MainActivity : AppCompatActivity() {
 
         return demand
     }
+
 
 }
