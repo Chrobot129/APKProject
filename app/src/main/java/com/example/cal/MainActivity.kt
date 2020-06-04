@@ -1,9 +1,11 @@
 package com.example.cal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         calTextView = findViewById(R.id.cal_textView)
         massEditText = findViewById(R.id.mass_editText)
         heightEditText = findViewById(R.id.height_editText)
+
+        var historyButton = findViewById<Button>(R.id.checkHistory_button)
+        historyButton.setOnClickListener {
+            val intent = Intent(this, HistoryCheckActivity::class.java)
+            startActivity(intent)
+        }
 
         massEditText.addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(s: Editable?) {
