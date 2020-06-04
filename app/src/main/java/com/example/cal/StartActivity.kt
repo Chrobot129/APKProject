@@ -25,6 +25,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
+
         val usersRecyclerView = findViewById<RecyclerView>(R.id.users_recyclerview)
         val adapter = UserListAdapter(this)
         usersRecyclerView.adapter = adapter
@@ -34,6 +35,9 @@ class StartActivity : AppCompatActivity() {
         userViewModel.allUsers.observe(this, Observer { users ->
         users?.let { adapter.setWords(it) }
         })
+
+        //set item click adapter on
+        adapter
 
         startButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

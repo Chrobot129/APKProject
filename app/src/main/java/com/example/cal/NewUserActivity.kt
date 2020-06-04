@@ -47,23 +47,6 @@ class NewUserActivity : AppCompatActivity() {
 
         }
 
-
-        val button = findViewById<Button>(R.id.button2)
-        button.setOnClickListener{
-            if (TextUtils.isEmpty(newUserEditText.text)){
-                Toast.makeText(
-                    applicationContext,
-                    "empty",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                Toast.makeText(
-                    applicationContext,
-                    newUserEditText.text.toString(),
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
     }
 
     companion object {
