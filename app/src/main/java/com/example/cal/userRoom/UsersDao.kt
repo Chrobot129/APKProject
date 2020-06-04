@@ -14,6 +14,9 @@ interface UsersDao {
     @Delete
     fun delete(user: com.example.cal.userRoom.User)
 
+    @Query("SELECT * FROM users_table WHERE userName = :name")
+    fun getByUserId(name: String): LiveData<List<com.example.cal.userRoom.User>>
+
     @Query("SELECT * FROM users_table")
     fun getAllUsers(): LiveData<List<com.example.cal.userRoom.User>>
 

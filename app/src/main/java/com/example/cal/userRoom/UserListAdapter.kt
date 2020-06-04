@@ -9,17 +9,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cal.R
 import kotlinx.android.synthetic.main.activity_start.view.*
 
-class UserListAdapter internal constructor(
-    context: Context
-): RecyclerView.Adapter<UserListAdapter.UserViewHolder>() {
+class UserListAdapter internal constructor(context: Context) :
+
+    RecyclerView.Adapter<UserListAdapter.UserViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var users = emptyList<User>()
 
-    inner class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+
+    inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val userItemView: TextView = itemView.findViewById(R.id.rv_textView)
         val userGenderItemView: TextView = itemView.findViewById(R.id.rvg_textView)
+
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val itemView = inflater.inflate(R.layout.user_selection_view_holder, parent, false)
         return UserViewHolder(itemView)
@@ -29,6 +32,7 @@ class UserListAdapter internal constructor(
         val current = users[position]
         holder.userItemView.text = current.userName
         holder.userGenderItemView.text = current.gender
+        holder.userItemView.setOnClickListener { }
     }
 
     internal fun setWords(users: List<User>) {
