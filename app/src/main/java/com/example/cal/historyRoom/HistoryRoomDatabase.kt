@@ -52,11 +52,11 @@ public abstract class HistoryRoomDatabase: RoomDatabase() {
         }
 
         fun populateDatabase(recordDao: RecordDao) {
-             recordDao.deleteAll()
-             var user = Record("Adrian", "20", "wczoraj")
-             recordDao.insert(user)
-             user = Record("Adrian", "21", "dzisiaj")
-             recordDao.insert(user)
+           //  recordDao.deleteAll()
+          //   var user = Record("Adrian", "20", "wczoraj")
+          //   recordDao.insert(user)
+           //  user = Record("Adrian", "21", "dzisiaj")
+           //  recordDao.insert(user)
         }
     }
 }

@@ -27,7 +27,7 @@ class HistoryListAdapter internal constructor(
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val current = history[position]
+        val current = this.history[position]
             holder.bmiItemView.text = current.bmr
             holder.timeItemView.text = current.time
 

@@ -16,12 +16,15 @@ class HistoryViewModel(application: Application): AndroidViewModel(application) 
     init{
         val recordDao = HistoryRoomDatabase.getDatabase(application, viewModelScope).recordDao()
         repository = HistoryRepository(recordDao)
-        history = repository.allUsers
+        history = repository.allRecords
     }
 
     fun insert(record: Record) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(record)
     }
 
+    fun deleteAll() = viewModelScope.launch (Dispatchers.IO) {
+        repository.deleteAll()
+    }
 
 }

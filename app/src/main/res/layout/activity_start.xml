@@ -7,17 +7,16 @@
     tools:context=".StartActivity">
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/clean_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.1"
-        android:text="Debug start"
+        android:text="@string/wyczysc"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_button"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/add_button"
@@ -26,10 +25,9 @@
         android:text="@string/nowy_user_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/users_recyclerview"
