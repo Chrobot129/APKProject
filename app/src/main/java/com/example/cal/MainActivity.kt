@@ -59,9 +59,9 @@ class MainActivity : AppCompatActivity() {
     private fun calculate_demand(): Double {
         var demand: Double = 0.0
         var coefficient: Double = 0.0
-        if (man_radioButton.isChecked) {
+        if (true) { //Man radio buttonc checked
             coefficient = 5.0
-        } else if (woman_radioButton.isChecked) {
+        } else if (false) { //woman radio button
             coefficient = -161.0
         }
         var mass = 0.0

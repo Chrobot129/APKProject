@@ -10,14 +10,14 @@
         android:id="@+id/mass_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Masa"
+        android:layout_marginEnd="32dp"
+        android:text="Masa [kg]"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/mass_editText"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <EditText
         android:id="@+id/height_editText"
@@ -28,60 +28,61 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/height_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Wzrost"
+        android:text="Wzrost [cm]"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/height_editText"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.452" />
 
-    <RadioGroup
-        android:id="@+id/userGender_radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145">
+<!--    <RadioGroup-->
+<!--        android:id="@+id/userGender_radioGroup"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.145">-->
 
-        <RadioButton
-            android:id="@+id/man_radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mężczyzna"
-            android:textAlignment="textStart" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/man_radioButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Mężczyzna"-->
+<!--            android:textAlignment="textStart" />-->
 
-        <RadioButton
-            android:id="@+id/woman_radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kobieta" />
-    </RadioGroup>
+<!--        <RadioButton-->
+<!--            android:id="@+id/woman_radioButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Kobieta" />-->
+<!--    </RadioGroup>-->
 
     <TextView
         android:id="@+id/cal_textView"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cal_textView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <EditText
         android:id="@+id/mass_editText"
@@ -92,33 +93,35 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <TextView
         android:id="@+id/cal_textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="133dp"
+        android:layout_height="20dp"
         android:text="Zapotrzebowanie"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.573" />
 
     <TextView
         android:id="@+id/gender_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Po prostu wybierz płeć!"
+        android:fontFamily="@font/roboto"
+        android:text="Po prostu wpisz swoje dane!"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <Button
         android:id="@+id/checkHistory_button"
