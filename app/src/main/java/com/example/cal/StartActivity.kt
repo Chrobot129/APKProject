@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cal.historyRoom.HistoryViewModel
 import com.example.cal.userRoom.User
 import com.example.cal.userRoom.UserListAdapter
 import com.example.cal.userRoom.UserViewModel
@@ -20,6 +21,7 @@ class StartActivity : AppCompatActivity() {
     private val newUserActivityRequestCode = 1
     lateinit var username: EditText
     private lateinit var userViewModel: UserViewModel
+    private lateinit var historyViewModel: HistoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +38,12 @@ class StartActivity : AppCompatActivity() {
         users?.let { adapter.setWords(it) }
         })
 
-        //set item click adapter on
 
-        startButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        clean_Button.setOnClickListener {
+            historyViewModel = ViewModelProvider(this).get(HistoryViewModel::class.java)
+            historyViewModel.deleteAll()
+            userViewModel.deleteAll()
+            Unit
         }
 
         add_button.setOnClickListener {
@@ -52,12 +55,14 @@ class StartActivity : AppCompatActivity() {
 
     }
     private fun userClicked(item: User) {
-        Toast.makeText(this, "Clicked ${item.userName}", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("userName", item.userName)
+        intent.putExtra("userGender", item.gender)
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
-
 
         if(requestCode == newUserActivityRequestCode && requestCode == -Activity.RESULT_OK) {
             intentData?.let { data ->
@@ -68,7 +73,7 @@ class StartActivity : AppCompatActivity() {
         } else {
             Toast.makeText(
                 applicationContext,
-                "empty",
+                "Uzupełnij nazwę lub wybierz płeć",
                 Toast.LENGTH_LONG
             ).show()
         }

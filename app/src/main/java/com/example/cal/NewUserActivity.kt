@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.*
+import androidx.lifecycle.ViewModelProvider
+import com.example.cal.userRoom.User
+import com.example.cal.userRoom.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_new_user.*
 
@@ -14,19 +17,19 @@ class NewUserActivity : AppCompatActivity() {
 
     lateinit var newUserEditText: EditText
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_user)
         newUserEditText = findViewById(R.id.newUser_editText)
-        val userMan = findViewById<RadioButton>(R.id.userMan_radioButton)
-        val userWoman = findViewById<RadioButton>(R.id.userWoman_radioButton)
+
         val userGender = findViewById<RadioGroup>(R.id.usergender_radioGroup)
-        
-        var gender: String = "Kobieta"
-        userGender.setOnCheckedChangeListener( RadioGroup.OnCheckedChangeListener { group, checkedId ->
+
+        var gender: String = ""
+        userGender.setOnCheckedChangeListener { group, checkedId ->
             val radio: RadioButton = findViewById(checkedId)
             gender = radio.text.toString()
-        })
+        }
 
         val newUserButton = findViewById<Button>(R.id.addUser_button)
         newUserButton.setOnClickListener(){
@@ -34,7 +37,7 @@ class NewUserActivity : AppCompatActivity() {
             if(TextUtils.isEmpty(newUserEditText.text) || userGender.checkedRadioButtonId == -1){
                 Toast.makeText(
                     applicationContext,
-                    "empty",
+                    "Uzupełnij nazwę lub wybierz płeć",
                     Toast.LENGTH_LONG
                 ).show()
             } else {

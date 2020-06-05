@@ -42,8 +42,7 @@ public abstract class UserRoomDatabase: RoomDatabase() {
 
             override fun onOpen(db: SupportSQLiteDatabase) {
                 super.onOpen(db)
-                // If you want to keep the data through app restarts,
-                // comment out the following line.
+
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
                         populateDatabase(database.usersDao())
@@ -53,13 +52,11 @@ public abstract class UserRoomDatabase: RoomDatabase() {
         }
 
         fun populateDatabase(usersDao: UsersDao) {
-            // Start the app with a clean database every time.
-            // Not needed if you only populate on creation.
             //usersDao.deleteAll()
 
-           // var user = User("Hello", "World!!")
+           // var user = User("Adrian", "Mężczyzna")
            // usersDao.insert(user)
-           // user = User("Krystian", "Chrobocińsi")
+           // user = User("Krystian", "Mężczyzna")
            // usersDao.insert(user)
         }
      }

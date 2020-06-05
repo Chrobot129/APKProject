@@ -10,7 +10,8 @@ import com.example.cal.R
 import kotlinx.android.synthetic.main.activity_start.view.*
 
 class HistoryListAdapter internal constructor(
-    context: Context
+    context: Context,
+    val userName: String
 ): RecyclerView.Adapter<HistoryListAdapter.HistoryViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -26,13 +27,14 @@ class HistoryListAdapter internal constructor(
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
-        val current = history[position]
-        holder.bmiItemView.text = current.bmi
-        holder.timeItemView.text = current.time
+        val current = this.history[position]
+            holder.bmiItemView.text = current.bmr
+            holder.timeItemView.text = current.time
+
     }
 
     internal fun setWords(history: List<Record>) {
-        this.history = history
+        this.history = history.filter { record: Record ->  record.userName.equals(userName)}
         notifyDataSetChanged()
     }
 

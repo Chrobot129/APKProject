@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Twoje zapotrzebowanie energetyczne</string>
-    <string name="gender_text_string">PO PROSTU wybierz płeć!</string>
+    <string name="app_name">Kalorymetr</string>
     <string name="demand_string">%1$d kcal</string>
-    <string name="title_activity_history_check">Historia Wyników</string>
+    <string name="title_activity_history_check">Historia zapotrzebowania</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
 <!--    buttons -->
@@ -11,8 +10,9 @@
     <string name="add_button">Dodaj</string>
     <string name="history_button">Historia</string>
     <string name="previous">Previous</string>
+    <string name="wyczysc">Wyczyść listę</string>
 <!--    calculator strings-->
-    <string name="calc_title">Po prostu wpisz swoje dane!</string>
+    <string name="calc_title">Wpisz swoje dane</string>
     <string name="masa_calc">Masa [kg]</string>
     <string name="wzrost_calc">Wzrost [cm]</string>
     <string name="Zapotrzebowanie_calc">Zapotrzebowanie</string>
@@ -20,7 +20,7 @@
     <string name="colname_data">Data</string>
     <string name="colname_bmi">BMI</string>
 <!--nowy user labels-->
-    <string name="man">Meżczyzna</string>
+    <string name="man">Mężczyzna</string>
     <string name="wom">Kobieta</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
