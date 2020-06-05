@@ -22,7 +22,7 @@
         android:id="@+id/addUser_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text= "@string/add_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
@@ -43,13 +43,13 @@
             android:id="@+id/userMan_radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mężczyzna" />
+            android:text="@string/man" />
 
         <RadioButton
             android:id="@+id/userWoman_radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kobieta" />
+            android:text="@string/wom" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
