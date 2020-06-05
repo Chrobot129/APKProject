@@ -36,7 +36,6 @@ class StartActivity : AppCompatActivity() {
         users?.let { adapter.setWords(it) }
         })
 
-        //set item click adapter on
 
         startButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -52,7 +51,10 @@ class StartActivity : AppCompatActivity() {
 
     }
     private fun userClicked(item: User) {
-        Toast.makeText(this, "Clicked ${item.userName}", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("userName", item.userName)
+        intent.putExtra("userGender", item.gender)
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
