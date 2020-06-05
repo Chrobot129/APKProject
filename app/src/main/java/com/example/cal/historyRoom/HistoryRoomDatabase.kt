@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Record::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(Record::class), version = 5, exportSchema = false)
 public abstract class HistoryRoomDatabase: RoomDatabase() {
 
     abstract fun recordDao(): RecordDao
@@ -42,8 +42,7 @@ public abstract class HistoryRoomDatabase: RoomDatabase() {
 
             override fun onOpen(db: SupportSQLiteDatabase) {
                 super.onOpen(db)
-                // If you want to keep the data through app restarts,
-                // comment out the following line.
+
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
                         populateDatabase(database.recordDao())
@@ -53,13 +52,10 @@ public abstract class HistoryRoomDatabase: RoomDatabase() {
         }
 
         fun populateDatabase(recordDao: RecordDao) {
-            // Start the app with a clean database every time.
-            // Not needed if you only populate on creation.
-            recordDao.deleteAll()
-
-             var user = Record("Hello", "World!!")
+             recordDao.deleteAll()
+             var user = Record("Adrian", "20", "wczoraj")
              recordDao.insert(user)
-             user = Record("Krystian", "Chrobocińsi")
+             user = Record("Adrian", "21", "dzisiaj")
              recordDao.insert(user)
         }
     }

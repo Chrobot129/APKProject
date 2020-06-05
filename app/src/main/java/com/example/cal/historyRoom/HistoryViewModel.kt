@@ -23,4 +23,5 @@ class HistoryViewModel(application: Application): AndroidViewModel(application) 
         repository.insert(record)
     }
 
+
 }

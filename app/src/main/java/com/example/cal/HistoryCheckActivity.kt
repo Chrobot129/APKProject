@@ -20,8 +20,11 @@ class HistoryCheckActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history_check)
 
+        val intent = getIntent()
+        val userName = intent.getStringExtra("userName")
+
         val historyRecyclerView = findViewById<RecyclerView>(R.id.history_recyclerView)
-        val adapter = HistoryListAdapter(this)
+        val adapter = HistoryListAdapter(this, userName)
         historyRecyclerView.adapter = adapter
         historyRecyclerView.layoutManager = LinearLayoutManager(this)
 

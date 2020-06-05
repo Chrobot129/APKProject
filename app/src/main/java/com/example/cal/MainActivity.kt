@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import com.example.cal.historyRoom.HistoryListAdapter
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         var historyButton = findViewById<Button>(R.id.checkHistory_button)
         historyButton.setOnClickListener {
             val intent = Intent(this, HistoryCheckActivity::class.java)
+            intent.putExtra("userName", userName)
+            intent.putExtra("userGender", userGender)
             startActivity(intent)
         }
 
@@ -49,9 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         var addRecordButton = findViewById<Button>(R.id.addToHistory_button)
         addRecordButton.setOnClickListener {
-            val bmi = calculate_demand(userGender).toInt().toString()
+            Toast.makeText(this,"Dodano", Toast.LENGTH_LONG).show()
+            val bmr = calculate_demand(userGender).toInt().toString()
             val time = LocalDate.now().toString()
-            historyViewModel.insert(Record(bmi, time))
+            historyViewModel.insert(Record(userName, bmr, time))
             Unit
         }
 
