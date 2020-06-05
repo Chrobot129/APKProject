@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cal.R
-import kotlinx.android.synthetic.main.activity_start.view.*
 
 class HistoryListAdapter internal constructor(
     context: Context
@@ -19,7 +18,9 @@ class HistoryListAdapter internal constructor(
     inner class HistoryViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val bmiItemView: TextView = itemView.findViewById(R.id.bmi_textView)
         val timeItemView: TextView = itemView.findViewById(R.id.time_textView)
+
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         val itemView = inflater.inflate(R.layout.record_view_holder, parent, false)
         return HistoryViewHolder(itemView)
@@ -35,6 +36,7 @@ class HistoryListAdapter internal constructor(
         this.history = history
         notifyDataSetChanged()
     }
+
 
     override fun getItemCount() = history.size
 }

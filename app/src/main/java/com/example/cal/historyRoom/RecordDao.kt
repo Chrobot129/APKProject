@@ -14,8 +14,12 @@ interface RecordDao {
     @Delete
     fun delete(record: Record)
 
-    @Query("SELECT * FROM history_table")
-    fun getHistory(): LiveData<List<Record>>
+    @Query("SELECT * FROM history_table WHERE time LIKE :userName")
+    fun getHistoryByPerson(userName: String): List<Record>
+
+  //  @Query("SELECT * FROM history_table")
+    @Query("SELECT * FROM history_table WHERE time LIKE :userName")
+    fun getHistory(userName: String): LiveData<List<Record>>
 
     @Query("DELETE FROM history_table")
     fun deleteAll()

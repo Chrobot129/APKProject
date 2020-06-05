@@ -23,4 +23,13 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         repository.insert(user)
     }
 
+    fun getUser(name: String): User? {
+        return  repository.getUser(name)
+        // return allUsers.value?.find { user -> name.equals(user.userName) }
+    }
+
+    fun deleteAll() = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteAll()
+    }
+
 }

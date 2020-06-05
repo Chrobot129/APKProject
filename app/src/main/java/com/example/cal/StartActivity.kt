@@ -21,12 +21,21 @@ class StartActivity : AppCompatActivity() {
     lateinit var username: EditText
     private lateinit var userViewModel: UserViewModel
 
+
+    private fun partItemClicked(user: User) {
+        Toast.makeText(this, "Clicked: ${user.gender}", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("userName", user.userName)
+        intent.putExtra("gender", user.gender)
+        startActivity(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
         val usersRecyclerView = findViewById<RecyclerView>(R.id.users_recyclerview)
-        val adapter = UserListAdapter(this)
+        val adapter = UserListAdapter(this, {user: User -> partItemClicked(user)})
         usersRecyclerView.adapter = adapter
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -36,8 +45,11 @@ class StartActivity : AppCompatActivity() {
         })
 
         startButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val ad = userViewModel.getUser("nie ja")
+
+              Toast.makeText(this, "Gender ${ad?.gender}", Toast.LENGTH_LONG).show()
+            //val intent = Intent(this, MainActivity::class.java)
+           // startActivity(intent)
         }
 
         add_button.setOnClickListener {

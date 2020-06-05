@@ -57,9 +57,13 @@ public abstract class HistoryRoomDatabase: RoomDatabase() {
             // Not needed if you only populate on creation.
             recordDao.deleteAll()
 
-             var user = Record("Hello", "World!!")
+             var user = Record( "123", "Adrian") //"Adrian",
              recordDao.insert(user)
-             user = Record("Krystian", "Chrobocińsi")
+             user = Record("453", "Adrian")//"Adriana",
+             recordDao.insert(user)
+             user = Record("454", "dzisss")//"Adriana",
+             recordDao.insert(user)
+             user = Record("455", "Adrian")//"Adriana",
              recordDao.insert(user)
         }
     }
