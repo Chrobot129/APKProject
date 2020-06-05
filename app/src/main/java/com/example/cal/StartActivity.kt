@@ -27,7 +27,7 @@ class StartActivity : AppCompatActivity() {
 
 
         val usersRecyclerView = findViewById<RecyclerView>(R.id.users_recyclerview)
-        val adapter = UserListAdapter(this)
+        val adapter = UserListAdapter(this, {user: User -> userClicked(user)})
         usersRecyclerView.adapter = adapter
         usersRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -37,7 +37,6 @@ class StartActivity : AppCompatActivity() {
         })
 
         //set item click adapter on
-        adapter
 
         startButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -49,8 +48,12 @@ class StartActivity : AppCompatActivity() {
             startActivityForResult(intent, newUserActivityRequestCode)
         }
 
-    }
 
+
+    }
+    private fun userClicked(item: User) {
+        Toast.makeText(this, "Clicked ${item.userName}", Toast.LENGTH_LONG).show()
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
