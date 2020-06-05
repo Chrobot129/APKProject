@@ -11,8 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HistoryCheckActivity"
-            android:label="@string/title_activity_history_check"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_history_check" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".StartActivity">
             <intent-filter>
@@ -22,6 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

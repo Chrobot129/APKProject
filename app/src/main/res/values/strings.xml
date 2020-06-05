@@ -2,7 +2,7 @@
     <string name="app_name">Twoje zapotrzebowanie energetyczne</string>
     <string name="gender_text_string">PO PROSTU wybierz płeć!</string>
     <string name="demand_string">%1$d kcal</string>
-    <string name="title_activity_history_check">HistoryCheckActivity</string>
+    <string name="title_activity_history_check">Historia Wyników</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
